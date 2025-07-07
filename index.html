@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Surgical Robot Transformer: Imitation Learning for Surgical Tasks">
+  <meta name="description" content="SRT-H: A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning">
   <meta name="keywords" content="Surgical Robotics, Bimanual Manipulation, Imitation Learning, Transformer, Deep Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Surgical RT</title>
@@ -26,9 +26,9 @@
 
   <link rel="icon" href="./favicon.ico">
 
-  <meta property="og:site_name" content="Surgical Robot Transformer: Imitation Learning for Surgical Tasks" />
+  <meta property="og:site_name" content="SRT-H: A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning" />
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="Surgical Robot Transformer: Imitation Learning for Surgical Tasks" />
+  <meta property="og:title" content="SRT-H: A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning" />
   <meta property="og:description" content="by Ji Woong Kim, Tony Zhao, Sam Schmidgall, Anton Deguet, Marin Kobilarov, Chelsea Finn,and Axel Krieger at JHU & Stanford" />
   <meta property="og:url" content="https://surgical-robot-transformer.github.io/" />
   <meta property="og:image" content="https://surgical-robot-transformer.github.io/static/images/preview_srt.gif" />
@@ -40,7 +40,7 @@
 
   <meta property="article:publisher" content="https://surgical-robot-transformer.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Surgical Robot Transformer: Imitation Learning for Surgical Tasks" />
+  <meta name="twitter:title" content="SRT-H: A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning" />
   <meta name="twitter:description" content="by Ji Woong Kim, Tony Zhao, Sam Schmidgall, Anton Deguet, Marin Kobilarov, Chelsea Finn,and Axel Krieger at JHU & Stanford" />
   <meta name="twitter:url" content="https://surgical-robot-transformer.github.io/" />
   <meta name="twitter:image" content="https://surgical-robot-transformer.github.io/static/images/preview_srt.gif" />
@@ -61,8 +61,8 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-two-thirds is-centered has-text-centered">
-          <h1 class="title is-1 publication-title">Surgical Robot Transformer:</h1>
-          <h2 class="subtitle is-2 publication-subtitle">Imitation Learning for Surgical Tasks</h2>
+          <h1 class="title is-1 publication-title">SRT-H:</h1>
+          <h2 class="subtitle is-2 publication-subtitle">A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning</h2>
           <!-- <div class="is-size-4 publication-authors">
             <span class="author-block">
               <a href="https://sites.google.com/view/jkimrobot/home">Ji Woong (Brian) Kim</a>&nbsp;&nbsp;&nbsp;
@@ -80,7 +80,7 @@
           </div>
           
           <p class="has-text-centered is-size-5" style="margin-bottom: 30px; color: red;">
-            <strong>Oral Presentation at CoRL 2024</strong>
+            <strong>Science Robotics 2025</strong>
           </p>
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -109,7 +109,7 @@
         <div class="columns is-centered">
           <div class="column is-two-thirds has-text-centered">
             <video controls autoplay loop muted playsinline style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
-              <source src="./resources/tasks/teaser.mp4" type="video/mp4">
+              <source src="./resources/tasks_srt_h/teaser_14x_comp.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -194,15 +194,25 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We explore whether surgical manipulation tasks can be learned on the da Vinci robot via imitation learning.
-            However, the da Vinci system presents unique challenges which hinder straight-forward implementation of imitation learning. 
-            Notably, its forward kinematics is inconsistent due to imprecise joint measurements, and naively training a policy
-            using such approximate kinematics data often leads to task failure. To overcome this limitation, we introduce 
-            a relative action formulation which enables successful policy training and deployment using its approximate 
-            kinematics data. A promising outcome of this approach is that the large repository of clinical data, which 
-            contains approximate kinematics, may be directly utilized for robot learning without further corrections. 
-            We demonstrate our findings through successful execution of three fundamental surgical tasks, including tissue manipulation, 
-            needle handling, and knot-tying.
+            Research on autonomous surgery has largely focused on simple task 
+            automation in controlled environments.  However, real-world surgical 
+            applications demand dexterous manipulation over extended durations and 
+            robust generalization to the inherent variability of human tissue. 
+            These challenges remain difficult to address using existing logic-based or 
+            conventional end-to-end learning strategies. To address this gap, we propose 
+            a hierarchical framework for performing dexterous, long-horizon surgical steps. 
+            Our approach utilizes a high-level policy for task planning and a low-level policy 
+            for generating robot trajectories. The high-level planner plans in language space,
+             generating task-level or corrective instructions that guide the robot through the 
+             long-horizon steps and help the low-level policy recover from its mistakes. 
+             We validate our framework through ex vivo experiments on cholecystectomy, a 
+             commonly-practiced minimally invasive procedure, and conduct ablation studies 
+             to evaluate key components of the system. Our method achieves a 100\% success 
+             rate across n=8 different ex vivo gallbladders, operating fully autonomously 
+             without human intervention. The hierarchical approach improves the policy's ability 
+             to recover from suboptimal states that are inevitable in the highly dynamic environment 
+             of realistic surgical applications. This work demonstrates step-level autonomy in a surgical 
+             procedure, marking a milestone toward clinical deployment of autonomous surgical systems.
           </p>
         </div>
       </div>
